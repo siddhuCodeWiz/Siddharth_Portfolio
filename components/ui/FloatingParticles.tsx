@@ -2,6 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
+
+
 // Define types for props and particle object
 interface FloatingParticlesProps {
   className?: string;

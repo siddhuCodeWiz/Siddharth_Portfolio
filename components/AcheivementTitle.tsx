@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const colors = [
   "#FF5733", "#33FF57", "#5733FF", "#FF33A1", "#A133FF", "#33FFF5", "#FFD700", "#FF4500",
@@ -11,10 +11,20 @@ const AchievementsTitle = () => {
   const [hoverColors, setHoverColors] = useState(
     Array.from({ length: 12 }, () => getRandomColor()) // 12 letters → 12 colors
   );
+  const [isClient, setIsClient] = useState(false);
+
+  // Ensure we only update colors on the client side after the first render
+  useEffect(() => {
+    setIsClient(true); // This ensures that the state change only happens on the client
+  }, []);
 
   const changeColors = () => {
     setHoverColors(Array.from({ length: 12 }, () => getRandomColor()));
   };
+
+  if (!isClient) {
+    return <span className="inline-block relative font-bold text-5xl">Achievements</span>; // Render static text until client-side rendering
+  }
 
   return (
     <span className="inline-block relative font-bold text-5xl" onMouseEnter={changeColors}>

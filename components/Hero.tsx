@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { FaLocationArrow } from "react-icons/fa6";
 import { motion } from "framer-motion";
-
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
