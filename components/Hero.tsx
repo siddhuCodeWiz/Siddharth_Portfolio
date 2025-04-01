@@ -122,7 +122,9 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
+      <img src="/Sid.png" alt="Website Logo" className="absolute top-0 left-0 w-44 h-44" />
       <div className="flex justify-center relative z-10 h-[80vh] items-center">
+
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
